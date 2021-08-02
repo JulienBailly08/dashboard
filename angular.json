@@ -51,7 +51,9 @@
               "src/assets/css/customBack.css",
               "src/assets/css/styleBack.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.js"
+            ]
           },
           "configurations": {
             "production": {
