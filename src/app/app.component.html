@@ -1,10 +1,15 @@
 <app-navbar></app-navbar>
 
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2 bg-primary">
+      <app-sidepanel></app-sidepanel>
+    </div>
+    <div class="col-10 bg-secondary">
 
-
-
-
-<div class="container">
-  <router-outlet></router-outlet> 
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
+<app-footer></app-footer>
