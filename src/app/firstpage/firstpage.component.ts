@@ -10,6 +10,9 @@ export class FirstpageComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    
+   
   }
 
 }
