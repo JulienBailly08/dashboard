@@ -6,13 +6,19 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidepanelComponent } from './sidepanel/sidepanel.component';
 import { FooterComponent } from './footer/footer.component';
+import { FirstpageComponent } from './firstpage/firstpage.component';
+import { SecondpageComponent } from './secondpage/secondpage.component';
+import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     SidepanelComponent,
-    FooterComponent
+    FooterComponent,
+    FirstpageComponent,
+    SecondpageComponent,
+    ThirdpageComponent
   ],
   imports: [
     BrowserModule,
