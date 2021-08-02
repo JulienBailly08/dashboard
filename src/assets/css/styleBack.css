@@ -1,0 +1,38 @@
+body{
+    font-family: 'Mulish', sans-serif;
+    background-image: url(../img/orbit3.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.bannière{
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.size{
+  height: 150px;
+}
+th{
+  width: 250px;
+}
+
+a{
+  text-decoration: none;
+}
+
+.hauteur{
+    height: 940px;
+}
+
+@media screen and (max-width: 768px) {
+  body{
+    font-size: 0.75rem;
+  }
+}
+@media screen and (max-width: 576px) {
+  body{
+    font-size: 0.65rem;
+  }
+}
