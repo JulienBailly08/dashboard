@@ -11,7 +11,8 @@ import { SecondpageComponent } from './secondpage/secondpage.component';
 import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { TestComponent } from './sharts/test/test.component';
+import { ChartsModule } from 'ng2-charts';
+import { PieChartComponent } from './sharts/pie-chart/pie-chart.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,12 @@ import { TestComponent } from './sharts/test/test.component';
     ThirdpageComponent,
     FourOhFourComponent,
     HomePageComponent,
-    TestComponent
+    PieChartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
