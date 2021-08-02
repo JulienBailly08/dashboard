@@ -11,6 +11,7 @@ import { SecondpageComponent } from './secondpage/secondpage.component';
 import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { TestComponent } from './sharts/test/test.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     SecondpageComponent,
     ThirdpageComponent,
     FourOhFourComponent,
-    HomePageComponent
+    HomePageComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
