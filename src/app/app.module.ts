@@ -9,6 +9,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { SecondpageComponent } from './secondpage/secondpage.component';
 import { ThirdpageComponent } from './thirdpage/thirdpage.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ThirdpageComponent } from './thirdpage/thirdpage.component';
     FooterComponent,
     FirstpageComponent,
     SecondpageComponent,
-    ThirdpageComponent
+    ThirdpageComponent,
+    FourOhFourComponent
   ],
   imports: [
     BrowserModule,
