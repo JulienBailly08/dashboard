@@ -1,26 +1,53 @@
-
-<script type="text/javascript">
-    google.charts.load("current", { packages: ["corechart"] });
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
-            ['Work', 11],
-            ['Eat', 2],
-            ['Commute', 2],
-            ['Watch TV', 2],
-            ['Sleep', 7]
-        ]);
-
-        var options = {
-            title: 'My Daily Activities',
-            is3D: true,
-        };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart_3d'));
-        chart.draw(data, options);
-        console.log('salut!!');
-    }
-</script>
-
-<div id="piechart_3d" style="width: 900px; height: 500px;"></div>
+<h2 class="text-white text-center m-5 ">Première page</h2>
+<div class="row row-cols-3 g-3 m-2">
+    <div class="col">
+        <a href="">
+            <div class="card">
+                <img src="assets/img/produits.jpg" class="img-fluid size" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Infos utiles</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a href="">
+            <div class="card">
+                <img src="assets/img/category.jpg" class="img-fluid size" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Infos utiles</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a href="">
+            <div class="card">
+                <img src="assets/img/banner.jpg" class="img-fluid size" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Infos utiles</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a href="">
+            <div class="card">
+                <img src="assets/img/user.jpg" class="img-fluid size" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Infos utiles</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col">
+        <a href="">
+            <div class="card">
+                <img src="assets/img/commandes.jpg" class="img-fluid size" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Infos utiles</h5>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>
