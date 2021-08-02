@@ -13,64 +13,61 @@
         </div>
     </li>
     <hr>
-    <h4 class="routerLinkActive='text-white'">Première page</h4>
-    <li>
+    <div routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}">
+        <h4>Première page</h4>
+
         <a routerLink="firstPage" class="nav-link text-primary">
             Montant total des ventes
         </a>
-    </li>
-    <li>
+
         <a routerLink="firstPage" class="nav-link text-primary">
             Nombre de commandes
         </a>
-    </li>
-    <li>
+
         <a routerLink="firstPage" class="nav-link text-primary">
             Valeur d'un panier moyen
         </a>
-    </li>
-    <li>
+
         <a routerLink="firstPage" class="nav-link text-primary">
             Nombre de nouveaux clients
         </a>
-    </li>
+    </div>
+
     <hr>
-    <h4 class="routerLinkActive='text-white'">Deuxième page</h4>
-    <li>
+    <div routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}">
+        <h4 class="routerLinkActive='text-white'">Deuxième page</h4>
+
         <a routerLink="secondPage" class="nav-link text-primary">
             Nombre de paniers
         </a>
-    </li>
-    <li>
+
+
         <a routerLink="secondPage" class="nav-link text-primary">
             Nombre de visite
         </a>
-    </li>
-    <li>
+
         <a routerLink="secondPage" class="nav-link text-primary">
             % de paniers abandonnés
         </a>
-    </li>
-    <li>
+
         <a routerLink="secondPage" class="nav-link text-primary">
             % récurence de commandes clients
         </a>
-    </li>
+    </div>
     <hr>
-    <h4 class="routerLinkActive='text-white'">Troisième page</h4>
-    <li>
+    <div routerLinkActive="text-white" [routerLinkActiveOptions]="{exact: true}">
+        <h4 class="routerLinkActive='text-white'">Troisième page</h4>
+
         <a routerLink="thirdPage" class="nav-link text-primary">
             % de conversion commandes
         </a>
-    </li>
-    <li>
+
         <a routerLink="thirdPage" class="nav-link text-primary">
             % de conversion paniers
         </a>
-    </li>
-    <li>
+
         <a routerLink="thirdPage" class="nav-link text-primary">
             Total de produits vendus
         </a>
-    </li>
+    </div>
 </ul>
