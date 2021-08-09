@@ -12,6 +12,8 @@ import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ValeurMoyPannierComponent } from './charts/valeur-moy-pannier/valeur-moy-pannier.component';
+import { TestComponent } from './charts/test/test.component';
+import { Test2Component } from './charts/test2/test2.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ValeurMoyPannierComponent } from './charts/valeur-moy-pannier/valeur-mo
     ThirdpageComponent,
     FourOhFourComponent,
     HomePageComponent,
-    ValeurMoyPannierComponent
+    ValeurMoyPannierComponent,
+    TestComponent,
+    Test2Component
   ],
   imports: [
     BrowserModule,

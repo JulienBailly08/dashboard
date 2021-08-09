@@ -29,7 +29,10 @@ export class ValeurMoyPannierComponent implements OnInit {
       name: "Valeur moyenne d'une commande",
       data: [100.23, 52.68]
 
-    }]
+    }],
+    credits:{
+      enabled:false,
+    }
 
   }
   constructor() { }
@@ -38,7 +41,7 @@ export class ValeurMoyPannierComponent implements OnInit {
     Highcharts.setOptions({
       colors: ['#287265']
   });
-    Highcharts.chart('chartTest',this.options);
+    Highcharts.chart('valeurMoyPannier',this.options);
   }
 
 }
