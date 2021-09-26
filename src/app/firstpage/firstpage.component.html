@@ -2,54 +2,17 @@
     <h2 class="text-white text-center m-5 ">Première page</h2>
     <div class="row row-cols-3 g-3 m-2">
         <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/produits.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
+            <div class="card">
+                <img src="assets/img/produits.jpg" class="img-fluid size" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Infos utiles</h5>
                 </div>
-            </a>
+            </div>
         </div>
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/category.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/banner.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/user.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/commandes.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
+        
+        <div *ngFor="let item of response">
+         
+            <p class="text-white">{{item.firstname}} {{item.lastname}} possèdant l'adresse : {{item.email}} et l'ID : {{item.id}}</p>
         </div>
     </div>
 </div>

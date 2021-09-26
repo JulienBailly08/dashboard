@@ -12,6 +12,7 @@ import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ValeurMoyPannierComponent } from './charts/valeur-moy-pannier/valeur-moy-pannier.component';
+import { HttpClientModule } from '@angular/common/http';
 import { TestComponent } from './charts/test/test.component';
 
 
@@ -31,7 +32,8 @@ import { TestComponent } from './charts/test/test.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
