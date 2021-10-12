@@ -13,6 +13,9 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 
+import { ChartModule } from 'angular2-chartjs';
+import { TestComponent } from './charts/test/test.component';
+
 
 @NgModule({
   declarations: [
@@ -25,11 +28,13 @@ import { HttpClientModule } from '@angular/common/http';
     ThirdpageComponent,
     FourOhFourComponent,
     HomePageComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
