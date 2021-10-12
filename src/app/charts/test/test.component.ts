@@ -14,7 +14,14 @@ export class TestComponent implements OnInit {
     datasets: [
       {
         label:"Volume annuel des ventes",
-        data: this.truc
+        data: this.truc,
+        backgroundColor:[
+          'rgba(255, 255, 153, 0.8)',
+        ],
+        borderColor:[
+          'rgba(255,108,2,0.9)',
+        ],
+        borderWidth:3
       }
     ]
   };
