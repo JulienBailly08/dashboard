@@ -11,9 +11,7 @@ import { SecondpageComponent } from './secondpage/secondpage.component';
 import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { ValeurMoyPannierComponent } from './charts/valeur-moy-pannier/valeur-moy-pannier.component';
 import { HttpClientModule } from '@angular/common/http';
-import { TestComponent } from './charts/test/test.component';
 
 
 @NgModule({
@@ -27,8 +25,6 @@ import { TestComponent } from './charts/test/test.component';
     ThirdpageComponent,
     FourOhFourComponent,
     HomePageComponent,
-    ValeurMoyPannierComponent,
-    TestComponent,
   ],
   imports: [
     BrowserModule,
