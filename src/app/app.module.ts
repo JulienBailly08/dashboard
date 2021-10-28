@@ -13,9 +13,10 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 
-import { ChartModule } from 'angular2-chartjs';
+import { HighchartsChartModule } from 'highcharts-angular';
 import { TestComponent } from './charts/test/test.component';
-
+import { TotalVenteComponent } from './charts/total-vente/total-vente.component';
+import { NbrCommandeComponent } from './charts/nbr-commande/nbr-commande.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +30,14 @@ import { TestComponent } from './charts/test/test.component';
     FourOhFourComponent,
     HomePageComponent,
     TestComponent,
+    TotalVenteComponent,
+    NbrCommandeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ChartModule
+    HighchartsChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

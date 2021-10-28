@@ -2,15 +2,24 @@
     <h2 class="text-white text-center m-5 ">Première page</h2>
     <div class="row row-cols-3 g-3 m-2">
         <div class="col">
-            <div class="card">
-                <img src="assets/img/produits.jpg" class="img-fluid size" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title text-center">Infos utiles</h5>
+            <div class="card justify-content-center">
+                <div class="card-body justify-content-center">
+                  <app-total-vente></app-total-vente>
                 </div>
             </div>
         </div>
+        <div class="col">
+          <div class="card justify-content-center">
+              <div class="card-body justify-content-center">
+                <app-nbr-commande [items]="orders"></app-nbr-commande>
+              </div>
+          </div>
+      </div>
+
+        <p *ngFor="let item of orders" class="text-white">{{item.orderDetails|json}}</p>
 
         <div *ngFor="let item of users">
+            <p class="text-white">{{item.orders}} {{item.adresse}}</p>
 
             <p class="text-white">{{item.firstname}} {{item.lastname}} possèdant l'adresse : {{item.email}} et l'ID : {{item.id}}</p>
         </div>

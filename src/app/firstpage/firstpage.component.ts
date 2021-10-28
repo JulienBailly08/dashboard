@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UsersService } from '../services/users.service';
 import { Response } from 'src/app/models/response';
+import { OrdersService } from '../services/orders.service';
 
 @Component({
   selector: 'app-firstpage',
@@ -11,17 +11,18 @@ import { Response } from 'src/app/models/response';
 })
 export class FirstpageComponent implements OnInit, OnDestroy {
 
-  //response:any;
   users!:any;
-  userSub!:Subscription ;
+  orders!:any;
+  userSub!:Subscription;
+  orderSub !:Subscription;
 
-  constructor(private http:HttpClient, private userService:UsersService) { }
+
+  constructor(  private userService:UsersService,
+                private orderService:OrdersService,
+                ) { }
 
   ngOnInit(): void {
-    /*this.http.get<any>('http://127.0.0.1:8000/api/users.json').subscribe(
-      data => { this.response = data },
-      error => { console.log(error.status) }
-    );*/
+
     this.userSub = this.userService.getUsers().subscribe(
       (response: Response)=>{
         this.users=response['hydra:member'];
@@ -31,10 +32,19 @@ export class FirstpageComponent implements OnInit, OnDestroy {
       }
     );
 
+    this.orderSub = this.orderService.getOrders().subscribe(
+      (response:Response)=>{
+        this.orders=response['hydra:member'];
+        console.log(this.orders.length);
+      },
+      (error)=>{
+        console.log(error);
+      }
+    );
 
   }
   ngOnDestroy():void{
     this.userSub.unsubscribe;
+    this.orderSub.unsubscribe;
   }
-
 }
