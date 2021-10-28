@@ -10,11 +10,9 @@ import { FirstpageComponent } from './firstpage/firstpage.component';
 import { SecondpageComponent } from './secondpage/secondpage.component';
 import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
-import { HomePageComponent } from './home-page/home-page.component';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HighchartsChartModule } from 'highcharts-angular';
-import { TestComponent } from './charts/test/test.component';
 import { TotalVenteComponent } from './charts/total-vente/total-vente.component';
 import { NbrCommandeComponent } from './charts/nbr-commande/nbr-commande.component';
 
@@ -28,8 +26,6 @@ import { NbrCommandeComponent } from './charts/nbr-commande/nbr-commande.compone
     SecondpageComponent,
     ThirdpageComponent,
     FourOhFourComponent,
-    HomePageComponent,
-    TestComponent,
     TotalVenteComponent,
     NbrCommandeComponent,
   ],

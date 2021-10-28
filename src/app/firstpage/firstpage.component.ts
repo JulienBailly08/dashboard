@@ -16,6 +16,9 @@ export class FirstpageComponent implements OnInit, OnDestroy {
   userSub!:Subscription;
   orderSub !:Subscription;
 
+  startDate: any;
+  endDate: any;
+
 
   constructor(  private userService:UsersService,
                 private orderService:OrdersService,
@@ -35,16 +38,21 @@ export class FirstpageComponent implements OnInit, OnDestroy {
     this.orderSub = this.orderService.getOrders().subscribe(
       (response:Response)=>{
         this.orders=response['hydra:member'];
-        console.log(this.orders.length);
       },
       (error)=>{
         console.log(error);
       }
     );
 
+
   }
+
+
+
   ngOnDestroy():void{
     this.userSub.unsubscribe;
     this.orderSub.unsubscribe;
   }
 }
+
+

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  @Output()startDateHeader:any;
+  @Output()endDateHeader:any;
+
+
   constructor() { }
 
   ngOnInit(): void {
+    this.startDateHeader='yop yop';
   }
 
 }

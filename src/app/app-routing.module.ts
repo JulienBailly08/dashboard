@@ -2,12 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FirstpageComponent } from './firstpage/firstpage.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
-import { HomePageComponent } from './home-page/home-page.component';
 import { SecondpageComponent } from './secondpage/secondpage.component';
 import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 
+
 const routes: Routes = [
-  {path: '', component: HomePageComponent},
   {path: 'firstPage', component: FirstpageComponent},
   {path: 'secondPage', component: SecondpageComponent},
   {path: 'thirdPage', component: ThirdpageComponent},
@@ -19,4 +18,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+
+}
