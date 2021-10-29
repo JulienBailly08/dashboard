@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 })
 export class DatesService {
 
-  dates:Date[]=[];
+  dates:any[]=[];
   datesSubject = new Subject<any>();
 
   constructor() { }
@@ -15,10 +15,10 @@ export class DatesService {
     this.datesSubject.next(this.dates);
   }
 
-  addDate(date1:Date, date2:Date):void{
+  addDate(date1:any, date2:any):void{
     this.dates=[];
-    this.dates.push(date1);
-    this.dates.push(date2);
+    this.dates.push(Date.parse(date1));
+    this.dates.push(Date.parse(date2));
     this.emitDates();
   }
 

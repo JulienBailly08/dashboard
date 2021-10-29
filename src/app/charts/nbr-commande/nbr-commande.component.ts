@@ -32,7 +32,6 @@ ngOnInit(): void {
 
       this.orders=response['hydra:member'];
 
-
       this.nbOfOrders=this.calculateNbOfOrders(this.orders);
 
       this.yAxisMax = this.nbOfOrders+this.nbOfOrders*0.25;
