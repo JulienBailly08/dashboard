@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TotalVenteComponent } from './charts/total-vente/total-vente.component';
 import { NbrCommandeComponent } from './charts/nbr-commande/nbr-commande.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { NbrCommandeComponent } from './charts/nbr-commande/nbr-commande.compone
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

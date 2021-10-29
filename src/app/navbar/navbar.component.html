@@ -6,12 +6,12 @@
       </a>
       <div class="px-3 py-2 mb-3">
         <div class="container d-flex flex-wrap justify-content-center">
-          <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto d-flex align-items-center">
+          <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto d-flex align-items-center" (ngSubmit)="getdates()" [formGroup]="dateForm">
             <p class="mx-3 mb-0">Entre</p>
-            <input type="date" class="form-control" id="minDate">
+            <input type="date" class="form-control" formControlName="dateMin">
             <p class="mx-3 mb-0"> et </p>
-            <input type="date" class="form-control" id="maxDate">
-            <button type="button" class="btn mx-4 btn-warning">Valider</button>
+            <input type="date" class="form-control" formControlName="dateMax">
+            <button type="submit" [disabled]="dateForm.invalid" class="btn mx-4 btn-warning">Valider</button>
           </form>
 
           <div class="text-end">

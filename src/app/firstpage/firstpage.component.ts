@@ -9,50 +9,22 @@ import { OrdersService } from '../services/orders.service';
   templateUrl: './firstpage.component.html',
   styleUrls: ['./firstpage.component.css']
 })
-export class FirstpageComponent implements OnInit, OnDestroy {
+export class FirstpageComponent implements OnInit {
 
-  users!:any;
-  orders!:any;
-  userSub!:Subscription;
-  orderSub !:Subscription;
+
 
   startDate: any;
   endDate: any;
 
 
-  constructor(  private userService:UsersService,
-                private orderService:OrdersService,
-                ) { }
+  constructor( ) { }
 
   ngOnInit(): void {
 
-    this.userSub = this.userService.getUsers().subscribe(
-      (response: Response)=>{
-        this.users=response['hydra:member'];
-      },
-      (error)=>{
-        console.log(error);
-      }
-    );
-
-    this.orderSub = this.orderService.getOrders().subscribe(
-      (response:Response)=>{
-        this.orders=response['hydra:member'];
-      },
-      (error)=>{
-        console.log(error);
-      }
-    );
-
 
   }
 
 
-
-  ngOnDestroy():void{
-    this.userSub.unsubscribe;
-    this.orderSub.unsubscribe;
-  }
 }
 
 

@@ -8,6 +8,7 @@ import HighchartsSolidGauge from 'highcharts/modules/solid-gauge';
 import { Response } from 'src/app/models/response';
 import { Subscription } from 'rxjs';
 import { OrderDetailsService } from 'src/app/services/order-details.service';
+import { DatesService } from 'src/app/services/dates.service';
 
 highchartsMore(Highcharts);
 HighchartsSolidGauge(Highcharts);
@@ -21,16 +22,21 @@ HighchartsSolidGauge(Highcharts);
 })
 export class TotalVenteComponent implements OnInit, OnDestroy {
 
-  constructor(private orderDetailService: OrderDetailsService) { }
+  constructor(private orderDetailService: OrderDetailsService,
+              private datesServices:DatesService) { }
 
 
 
   ordersDetails!: any;
   ordersDetailsSub !: Subscription;
 
+  dates!:Date[];
+  datesSub:any;
+
   ventes !: any;
   chartOptions!: Highcharts.Options;
   value !:any;
+
 
   ngOnInit(): void {
 
@@ -114,7 +120,7 @@ export class TotalVenteComponent implements OnInit, OnDestroy {
             dataLabels: {
               format:
                 '<div style="text-align:center">' +
-                '<span style="font-size:25px">{y}</span><br/>' +
+                '<span style="font-size:25px">{y} €</span><br/>' +
                 '<span style="font-size:12px;opacity:0.4"></span>' +
                 '</div>'
             },
@@ -127,6 +133,13 @@ export class TotalVenteComponent implements OnInit, OnDestroy {
         console.log(error);
       }
     );
+    this.datesSub = this.datesServices.datesSubject.subscribe(
+      (value)=>{
+        this.dates = value; console.log(this.dates);
+      }
+    );
+    this.datesServices.emitDates();
+
   }
 
 getTotalSales(item:any){
@@ -134,11 +147,12 @@ getTotalSales(item:any){
 item.forEach((element: { total: number; }) => {
   total+=element.total
 });
-return total;
+return Math.round(total);
 }
 
 ngOnDestroy(){
-  this.ordersDetailsSub.unsubscribe
+  this.ordersDetailsSub.unsubscribe();
+  this.datesSub.unsubscribe();
 }
 
 }

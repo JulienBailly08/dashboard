@@ -103,8 +103,7 @@ calculateNbOfOrders(value:any){
   return value.length;
 }
 ngOnDestroy(){
-  this.orderSub.unsubscribe
+  this.orderSub.unsubscribe();
 }
-
 
 }

@@ -16,12 +16,5 @@
           </div>
       </div>
 
-        <p *ngFor="let item of orders" class="text-white">{{item.orderDetails|json}}</p>
-
-        <div *ngFor="let item of users">
-            <p class="text-white">{{item.orders}} {{item.adresse}}</p>
-
-            <p class="text-white">{{item.firstname}} {{item.lastname}} possèdant l'adresse : {{item.email}} et l'ID : {{item.id}}</p>
-        </div>
     </div>
 </div>

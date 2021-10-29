@@ -7,7 +7,7 @@ import { ThirdpageComponent } from './thirdpage/thirdpage.component';
 
 
 const routes: Routes = [
-  {path: 'firstPage', component: FirstpageComponent},
+  {path: '', component: FirstpageComponent},
   {path: 'secondPage', component: SecondpageComponent},
   {path: 'thirdPage', component: ThirdpageComponent},
   {path: 'not-found', component: FourOhFourComponent},
