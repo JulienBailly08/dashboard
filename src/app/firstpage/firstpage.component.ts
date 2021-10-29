@@ -12,11 +12,6 @@ import { OrdersService } from '../services/orders.service';
 export class FirstpageComponent implements OnInit {
 
 
-
-  startDate: any;
-  endDate: any;
-
-
   constructor( ) { }
 
   ngOnInit(): void {

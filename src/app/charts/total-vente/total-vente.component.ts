@@ -30,9 +30,6 @@ export class TotalVenteComponent implements OnInit, OnDestroy {
   ordersDetails!: any;
   ordersDetailsSub !: Subscription;
 
-  dates!:Date[];
-  datesSub:any;
-
   ventes !: any;
   chartOptions!: Highcharts.Options;
   value !:any;
@@ -133,12 +130,6 @@ export class TotalVenteComponent implements OnInit, OnDestroy {
         console.log(error);
       }
     );
-    this.datesSub = this.datesServices.datesSubject.subscribe(
-      (value)=>{
-        this.dates = value; console.log(this.dates);
-      }
-    );
-    this.datesServices.emitDates();
 
   }
 
@@ -152,7 +143,6 @@ return Math.round(total);
 
 ngOnDestroy(){
   this.ordersDetailsSub.unsubscribe();
-  this.datesSub.unsubscribe();
 }
 
 }

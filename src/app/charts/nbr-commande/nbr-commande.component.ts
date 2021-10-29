@@ -14,10 +14,6 @@ export class NbrCommandeComponent implements OnInit,OnDestroy {
 
   constructor(private orderService:OrdersService) { }
 
-  @Input() startDate: any;
-  @Input() endDate:any;
-
-
   orders!:any;
   orderSub !:Subscription;
 
