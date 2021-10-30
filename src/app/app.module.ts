@@ -24,6 +24,7 @@ import { RecurrenceCommandesComponent } from './charts/recurrence-commandes/recu
 import { ConversionCommandesComponent } from './charts/conversion-commandes/conversion-commandes.component';
 import { ConversionPaniersComponent } from './charts/conversion-paniers/conversion-paniers.component';
 import { TotalProduitsComponent } from './charts/total-produits/total-produits.component';
+import { NbVisitesComponent } from './charts/nb-visites/nb-visites.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { TotalProduitsComponent } from './charts/total-produits/total-produits.c
     ConversionCommandesComponent,
     ConversionPaniersComponent,
     TotalProduitsComponent,
+    NbVisitesComponent,
   ],
   imports: [
     BrowserModule,

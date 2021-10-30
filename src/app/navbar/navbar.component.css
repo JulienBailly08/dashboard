@@ -1,0 +1,15 @@
+
+
+/*break point sm*/
+@media screen and (max-width: 576px) {
+p{
+  font-size: 0.75rem;
+}
+button{
+  font-size: smaller;
+}
+input{
+  font-size: smaller;
+}
+
+}

@@ -3,3 +3,30 @@ highcharts-chart {
   height: 400px;
   display: block;
 }
+
+@media all and (min-width: 992px){
+  highcharts-chart {
+    width: 100%;
+    height: 350px;
+    display: block;
+  }
+
+}
+
+/* Break point md*/
+@media screen and (max-width: 768px) {
+  highcharts-chart {
+    width: 100%;
+    height: 300px;
+    display: block;
+  }
+}
+/*break point sm*/
+@media screen and (max-width: 576px) {
+  highcharts-chart {
+    width: 100%;
+    height: 200px;
+    display: block;
+  }
+
+}

@@ -1,56 +1,23 @@
-<div class="sticky-top">
-    <h2 class="text-white text-center m-5 ">Troisième page</h2>
-    <div class="row row-cols-3 g-3 m-2">
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/user.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/category.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/banner.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/produits.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
-        <div class="col">
-            <a href="">
-                <div class="card">
-                    <img src="assets/img/commandes.jpg" class="img-fluid size" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Infos utiles</h5>
-                    </div>
-                </div>
-            </a>
-        </div>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3 mt-5 m-2">
+  <div class="col">
+    <div class="card justify-content-center">
+      <div class="card-body justify-content-center">
+        <app-conversion-commandes></app-conversion-commandes>
+      </div>
     </div>
+  </div>
+  <div class="col">
+    <div class="card justify-content-center">
+      <div class="card-body justify-content-center">
+        <app-conversion-paniers></app-conversion-paniers>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card justify-content-center">
+      <div class="card-body justify-content-center">
+        <app-total-produits></app-total-produits>
+      </div>
+    </div>
+  </div>
 </div>
