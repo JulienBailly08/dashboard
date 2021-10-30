@@ -16,6 +16,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { TotalVenteComponent } from './charts/total-vente/total-vente.component';
 import { NbrCommandeComponent } from './charts/nbr-commande/nbr-commande.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PanierMoyenComponent } from './charts/panier-moyen/panier-moyen.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FourOhFourComponent,
     TotalVenteComponent,
     NbrCommandeComponent,
+    PanierMoyenComponent,
   ],
   imports: [
     BrowserModule,
