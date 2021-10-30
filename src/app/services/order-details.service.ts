@@ -25,8 +25,7 @@ export class OrderDetailsService {
           (response:Response)=>{
             this.ordersDetailsSelected=[];
             this.filterResultByDate(response['hydra:member']);
-             this.emitOrdersFiltered();
-             console.log(this.ordersDetailsSelected);
+            this.emitOrdersFiltered();
           }
         );
       }

@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import * as Highcharts from 'highcharts';
-import { OrdersService } from 'src/app/services/orders.service';
 import { Subscription } from 'rxjs';
+import { OrderDetailsService } from 'src/app/services/order-details.service';
 
 @Component({
   selector: 'app-panier-moyen',
@@ -10,9 +10,11 @@ import { Subscription } from 'rxjs';
 })
 export class PanierMoyenComponent implements OnInit, OnDestroy {
 
-  constructor(private orderService:OrdersService) { }
-  orders!:any;
-  ordersSub !:Subscription;
+  constructor(private ordersDetailsService:OrderDetailsService) { }
+
+
+  ordersDetails!:any;
+  ordersDetailsSub !:Subscription;
 
   nbOfOrders!:number;
   yAxisMax!:number;
@@ -23,14 +25,12 @@ export class PanierMoyenComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.ordersSub = this.orderService.ordersSelectedSubject.subscribe(
+    this.ordersDetailsSub = this.ordersDetailsService.ordersDetailsSelectedSubject.subscribe(
       (data)=>{
 
-        this.orders=data;
-        console.log(this.orders);
-        console.log(this.orders.length);
+        this.ordersDetails=data;
 
-        this.nbOfOrders=this.calculateNbOfOrders(this.orders);
+        this.nbOfOrders=this.calculateNbOfOrders(this.ordersDetails);
 
         this.yAxisMax = this.nbOfOrders+this.nbOfOrders*0.25;
 
@@ -77,9 +77,15 @@ export class PanierMoyenComponent implements OnInit, OnDestroy {
             type: 'column',
             name: 'Nombre de commande',
             data: [this.nbOfOrders],
-            color: 'rgba(90, 129, 0, 0.75)',
+            color: 'rgba(255, 255, 153, 0.8)',
             dataLabels: {
               enabled: true,
+              useHTML: true,
+              format:
+                '<div style="text-align:center">' +
+                '<span style="font-size:25px">{y} €</span><br/>' +
+                '<span style="font-size:12px;opacity:0.4"></span>' +
+                '</div>',
               crop: false
             }
           }]
@@ -89,14 +95,44 @@ export class PanierMoyenComponent implements OnInit, OnDestroy {
 
   }
 
-  calculateNbOfOrders(value:any){
-    return value.length;
+  calculateNbOfOrders(orderinfos:any){
+    let tabresults: number[]=[];
+    let total=0;
+    let nbElement;
+    let tabOrders: any[]=[];
+
+    orderinfos.forEach((element: { myOrder: string; }) => {
+      if(!tabOrders.includes(element.myOrder)){
+        tabOrders.push(element.myOrder);
+      }
+    });
+
+    tabOrders.forEach(element => {
+      let sommeElement=0;
+      orderinfos.forEach((orderinfo: { myOrder: any; total: number; }) => {
+        if(orderinfo.myOrder == element){
+          sommeElement+=orderinfo.total;
+        }
+      });
+      tabresults.push(sommeElement);
+    });
+
+    tabresults.forEach(element => {
+      total+=element;
+    });
+    nbElement=tabresults.length;
+    if(nbElement!=0){
+      return Math.round(total/nbElement);
+    }
+    return 0;
+
+
   }
 
 
 
   ngOnDestroy(){
-    this.ordersSub.unsubscribe();
+    this.ordersDetailsSub.unsubscribe();
   }
 
 }

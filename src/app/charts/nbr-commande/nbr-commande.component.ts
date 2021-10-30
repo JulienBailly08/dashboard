@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { OrdersService } from 'src/app/services/orders.service';
-import { Response } from 'src/app/models/response';
 import { Subscription } from 'rxjs';
 
 
@@ -82,6 +81,12 @@ ngOnInit(): void {
           color: 'rgba(90, 129, 0, 0.75)',
           dataLabels: {
             enabled: true,
+            useHTML: true,
+              format:
+                '<div style="text-align:center">' +
+                '<span style="font-size:25px">{y}</span><br/>' +
+                '<span style="font-size:12px;opacity:0.4"></span>' +
+                '</div>',
             crop: false
           }
         }]
@@ -91,11 +96,16 @@ ngOnInit(): void {
       console.log(error);
     }
   );
-
 }
 
 calculateNbOfOrders(value:any){
-  return value.length;
+  let nb=0;
+  value.forEach((element: { isPaid: boolean; }) => {
+    if(element.isPaid){
+      nb ++;
+    }
+  });
+  return nb;
 }
 ngOnDestroy(){
   this.orderSub.unsubscribe();

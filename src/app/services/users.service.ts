@@ -24,10 +24,8 @@ export class UsersService {
         this.getUsers().subscribe(
           (response:Response)=>{
             this.usersSelected=[];
-            console.log(response['hydra:member']);
             this.filterResultByDate(response['hydra:member']);
-             this.emitUsersFiltered();
-             console.log(this.usersSelected);
+            this.emitUsersFiltered();
           }
         );
       }
