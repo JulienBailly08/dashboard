@@ -5,7 +5,6 @@ import highchartsMore from 'highcharts/highcharts-more';
 import HighchartsSolidGauge from 'highcharts/modules/solid-gauge';
 
 
-import { Response } from 'src/app/models/response';
 import { Subscription } from 'rxjs';
 import { OrderDetailsService } from 'src/app/services/order-details.service';
 import { DatesService } from 'src/app/services/dates.service';
@@ -37,10 +36,10 @@ export class TotalVenteComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.ordersDetailsSub = this.orderDetailService.getOrderDetails().subscribe(
-      (response: Response) => {
+    this.ordersDetailsSub = this.orderDetailService.ordersDetailsSelectedSubject.subscribe(
+      (response) => {
 
-        this.ordersDetails = response['hydra:member'];
+        this.ordersDetails = response;
 
         this.value=this.getTotalSales(this.ordersDetails);
 

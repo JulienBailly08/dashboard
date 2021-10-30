@@ -12,7 +12,7 @@ export class PanierMoyenComponent implements OnInit, OnDestroy {
 
   constructor(private orderService:OrdersService) { }
   orders!:any;
-  ordersSubjSub !:Subscription;
+  ordersSub !:Subscription;
 
   nbOfOrders!:number;
   yAxisMax!:number;
@@ -23,10 +23,12 @@ export class PanierMoyenComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
 
-    this.ordersSubjSub = this.orderService.ordersSelectedSubject.subscribe(
-      (retour)=>{
-        console.log(retour);
-        this.orders=retour;
+    this.ordersSub = this.orderService.ordersSelectedSubject.subscribe(
+      (data)=>{
+
+        this.orders=data;
+        console.log(this.orders);
+        console.log(this.orders.length);
 
         this.nbOfOrders=this.calculateNbOfOrders(this.orders);
 
@@ -94,7 +96,7 @@ export class PanierMoyenComponent implements OnInit, OnDestroy {
 
 
   ngOnDestroy(){
-    this.ordersSubjSub.unsubscribe();
+    this.ordersSub.unsubscribe();
   }
 
 }

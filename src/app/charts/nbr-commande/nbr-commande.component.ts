@@ -27,10 +27,10 @@ export class NbrCommandeComponent implements OnInit,OnDestroy {
 
 ngOnInit(): void {
 
-  this.orderSub = this.orderService.getOrders().subscribe(
-    (response:Response)=>{
+  this.orderSub = this.orderService.ordersSelectedSubject.subscribe(
+    (response)=>{
 
-      this.orders=response['hydra:member'];
+      this.orders=response;
 
       this.nbOfOrders=this.calculateNbOfOrders(this.orders);
 

@@ -17,6 +17,14 @@ import { TotalVenteComponent } from './charts/total-vente/total-vente.component'
 import { NbrCommandeComponent } from './charts/nbr-commande/nbr-commande.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { PanierMoyenComponent } from './charts/panier-moyen/panier-moyen.component';
+import { NouveauxClientsComponent } from './charts/nouveaux-clients/nouveaux-clients.component';
+import { NbPaniersComponent } from './charts/nb-paniers/nb-paniers.component';
+import { PaniersAbandonnesComponent } from './charts/paniers-abandonnes/paniers-abandonnes.component';
+import { RecurrenceCommandesComponent } from './charts/recurrence-commandes/recurrence-commandes.component';
+import { ConversionCommandesComponent } from './charts/conversion-commandes/conversion-commandes.component';
+import { ConversionPaniersComponent } from './charts/conversion-paniers/conversion-paniers.component';
+import { TotalProduitsComponent } from './charts/total-produits/total-produits.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +39,13 @@ import { PanierMoyenComponent } from './charts/panier-moyen/panier-moyen.compone
     TotalVenteComponent,
     NbrCommandeComponent,
     PanierMoyenComponent,
+    NouveauxClientsComponent,
+    NbPaniersComponent,
+    PaniersAbandonnesComponent,
+    RecurrenceCommandesComponent,
+    ConversionCommandesComponent,
+    ConversionPaniersComponent,
+    TotalProduitsComponent,
   ],
   imports: [
     BrowserModule,

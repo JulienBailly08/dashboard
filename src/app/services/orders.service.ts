@@ -1,7 +1,7 @@
 import { Injectable} from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Observable, Subject} from 'rxjs';
+import { Observable, of, Subject} from 'rxjs';
 import { Response } from 'src/app/models/response';
 import { DatesService } from './dates.service';
 
@@ -27,20 +27,20 @@ export class OrdersService {
           (response:Response)=>{
             this.ordersSelected=[];
             this.filterResultByDate(response['hydra:member']);
-             this.emitOrdersFiltered();
+            this.emitOrdersFiltered();
           }
         );
       }
     );
-    this.datesServices.emitDates();
   }
 
   getOrders() : Observable < Response > {
     return this.http.get<Response>(this.baseUrl);
   }
 
+
   emitOrdersFiltered():void{
-    this.ordersSelectedSubject.next(this.ordersSelected);
+  this.ordersSelectedSubject.next(this.ordersSelected);
   }
 
 

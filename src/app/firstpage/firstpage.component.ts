@@ -1,24 +1,19 @@
-import { Component, OnDestroy, OnInit, Output } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { UsersService } from '../services/users.service';
-import { Response } from 'src/app/models/response';
-import { OrdersService } from '../services/orders.service';
+import { Component, OnInit } from '@angular/core';
+import { DatesService } from '../services/dates.service';
 
 @Component({
   selector: 'app-firstpage',
   templateUrl: './firstpage.component.html',
   styleUrls: ['./firstpage.component.css']
 })
-export class FirstpageComponent implements OnInit {
+export class FirstpageComponent implements OnInit{
 
 
-  constructor( ) { }
+  constructor(private datesServices: DatesService ) { }
 
   ngOnInit(): void {
-
-
+   this.datesServices.emitDates();
   }
-
 
 }
 
