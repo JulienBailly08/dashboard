@@ -41,6 +41,7 @@ export class TotalVenteComponent implements OnInit, OnDestroy {
 
         this.ordersDetails = response;
 
+
         this.value=this.getTotalSales(this.ordersDetails);
 
         //chart below

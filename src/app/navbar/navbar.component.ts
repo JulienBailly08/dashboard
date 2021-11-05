@@ -9,9 +9,10 @@ import { DatesService } from '../services/dates.service';
 })
 export class NavbarComponent implements OnInit {
 
-  dateMax=new Date();
-  dateMin=new Date();
+  dateMax:any=new Date();
+  dateMin:any=new Date();
   today=new Date();
+
 
 
   dateForm!:FormGroup;
@@ -36,15 +37,18 @@ export class NavbarComponent implements OnInit {
     const formValue = this.dateForm.value;
     this.dateMin=formValue.dateMin;
     this.dateMax=formValue.dateMax;
+    console.log(this.dateMin);
 
-    if(this.dateMin>this.dateMax){
+    if(Date.parse(this.dateMin)>Date.parse(this.dateMax)){
       this.wrongDates();
     }
-    if(Date.parse(this.dateMin)>Date.parse(this.today)||this.dateMax>this.today){
-      console.log('plop');
+    else if(Date.parse(this.dateMin)>this.today.getTime()||Date.parse(this.dateMax)>this.today.getTime()){
       this.FuturDates();
     }
-    this.datesServices.addDate(this.dateMax, this.dateMin);
+    else{
+      this.datesServices.addDate(this.dateMax, this.dateMin);
+    }
+
   }
 
   wrongDates(){

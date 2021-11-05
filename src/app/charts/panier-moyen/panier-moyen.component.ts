@@ -125,11 +125,7 @@ export class PanierMoyenComponent implements OnInit, OnDestroy {
       return Math.round(total/nbElement);
     }
     return 0;
-
-
   }
-
-
 
   ngOnDestroy(){
     this.ordersDetailsSub.unsubscribe();
