@@ -12,6 +12,7 @@ export class NavbarComponent implements OnInit {
   dateMax:any=new Date();
   dateMin:any=new Date();
   today=new Date();
+  affichage!:string;
 
 
 
@@ -38,7 +39,6 @@ export class NavbarComponent implements OnInit {
     this.dateMin=formValue.dateMin;
     this.dateMax=formValue.dateMax;
     console.log(this.dateMin);
-
     if(Date.parse(this.dateMin)>Date.parse(this.dateMax)){
       this.wrongDates();
     }
@@ -55,14 +55,26 @@ export class NavbarComponent implements OnInit {
     this.dateMax=new Date();
     this.dateMin=new Date();
     this.creatingDateOneMonthMinus(this.dateMin);
-    console.log('wrong Date!!');
+
+    this.affichage='Date de début plus récente que date de fin';
+    setTimeout(() => {
+      this.affichage='';
+    }, 2500);
+
+    this.datesServices.addDate(this.dateMax, this.dateMin);
 
   }
   FuturDates(){
     this.dateMax=new Date();
     this.dateMin=new Date();
     this.creatingDateOneMonthMinus(this.dateMin);
-    console.log('In the futur ??!!');
+
+    this.affichage='Hummm le futur ne peut être connu que par les initiés';
+    setTimeout(() => {
+      this.affichage='';
+    }, 2500);
+
+    this.datesServices.addDate(this.dateMax, this.dateMin);
 
   }
 
